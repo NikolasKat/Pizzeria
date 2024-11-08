@@ -19,7 +19,12 @@ function ListItem({ description }) {
                      Кеди Indoor OG Sneakers
                   </h3>
                </a>
-               <h3 className="font-extrabold">22990$</h3>
+               <div className="flex justify-center gap-2 items-baseline">
+                  <h3 className="font-extrabold">2290$</h3>
+                  <h4 className="font-thin text-xl before:absolute before:bottom-8 before:w-12 before:h-[2px] before:bg-red-500">
+                     1500$
+                  </h4>
+               </div>
             </div>
             {isHovered && (
                <button className="absolute top-48 left-[160px] bg-black p-3 text-white text-xl uppercase font-semibold w-[130px] h-16 transition-colors duration-300 ease-in-out hover:border hover:border-solid hover:border-purple-700 hover:bg-gray-400 hover:text-purple-950">

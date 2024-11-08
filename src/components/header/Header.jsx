@@ -1,7 +1,11 @@
+import { useState } from "react";
+
 import { CiSearch, CiHeart, CiShoppingCart, CiMenuFries } from "react-icons/ci";
 import { SiPuma } from "react-icons/si";
 
-function Header() {
+import Dropdown from "../dropdown/Dropdow";
+
+function Header({ isOpen, setIsOpen }) {
    return (
       <>
          <header className="fixed top-0 min-h-24 w-full py-6 px-11 bg-neutral-900 ">
@@ -13,37 +17,27 @@ function Header() {
                   >
                      <SiPuma />
                   </a>
-                  <div className="hidden desktop:flex desktop:gap-16">
-                     <a
-                        href="#"
-                        className="transition-colors duration-300 ease-in-out"
-                     >
-                        Чоловіки
-                     </a>
-                     <a
-                        href="#"
-                        className="transition-colors duration-300 ease-in-out"
-                     >
-                        Жінки
-                     </a>
-                     <a
-                        href="#"
-                        className="transition-colors duration-300 ease-in-out"
-                     >
-                        Діти
-                     </a>
-                     <a
-                        href="#"
-                        className="transition-colors duration-300 ease-in-out"
-                     >
-                        Колекції
-                     </a>
-                     <a
-                        href="#"
-                        className="transition-colors duration-300 ease-in-out"
-                     >
-                        Акції
-                     </a>
+                  <div className="hidden  desktop:flex desktop:gap-5">
+                     <Dropdown
+                        place={"header"}
+                        title="Чоловіки"
+                        categories={["Взуття", "Одяг", "Новинки", "Новинки"]}
+                     />
+                     <Dropdown
+                        place={"header"}
+                        title="Жінки"
+                        categories={["Взуття", "Одяг", "Новинки", "Новинки"]}
+                     />
+                     <Dropdown
+                        place={"header"}
+                        title="Діти"
+                        categories={["Взуття", "Одяг", "Новинки", "Новинки"]}
+                     />
+                     <Dropdown
+                        place={"header"}
+                        title="Колекції"
+                        categories={["Lifestyle", "Another"]}
+                     />
                   </div>
                </div>
                <div className="flex justify-between w-[200px] ">
@@ -65,12 +59,16 @@ function Header() {
                   >
                      <CiShoppingCart />
                   </a>
-                  <a
+
+                  <button
                      href="#"
-                     className="block transition-colors duration-300 ease-in-out extraWidthDesktop:hidden"
+                     className="block bg-neutral-900 transition-colors duration-300 ease-in-out extraWidthDesktop:hidden focus:outline-none"
+                     onClick={() => {
+                        setIsOpen((isOpen = !isOpen));
+                     }}
                   >
                      <CiMenuFries />
-                  </a>
+                  </button>
                </div>
             </div>
          </header>
