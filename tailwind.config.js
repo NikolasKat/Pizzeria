@@ -4,9 +4,10 @@ export default {
    theme: {
       extend: {},
       screens: {
+         forBtn: "394px",
          phones: "768px",
          desktop: "992px",
-         forBtn: "394px",
+         extraWidthDesktop: "1024px",
       },
    },
    plugins: [],
